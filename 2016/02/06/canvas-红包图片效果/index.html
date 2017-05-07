@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>canvas学习之图片效果 | zm_miner</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="很好玩的图片效果">
+<meta name="keywords" content="canvas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="canvas学习之图片效果">
+<meta property="og:url" content="http://www.ring1314.com/2016/02/06/canvas-红包图片效果/index.html">
+<meta property="og:site_name" content="zm_miner">
+<meta property="og:description" content="很好玩的图片效果">
+<meta property="og:image" content="http://www.ring1314.com/assets/blogImg/canvas-6.png">
+<meta property="og:image" content="http://www.ring1314.com/assets/blogImg/canvas-7.png">
+<meta property="og:image" content="http://www.ring1314.com/assets/blogImg/canvas-8.png">
+<meta property="og:updated_time" content="2017-04-23T17:16:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="canvas学习之图片效果">
+<meta name="twitter:description" content="很好玩的图片效果">
+<meta name="twitter:image" content="http://www.ring1314.com/assets/blogImg/canvas-6.png">
+  
+    <link rel="alternative" href="/atom.xml" title="zm_miner" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">����</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">Ŭ������IT��ҵ</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/canvas/" style="font-size: 10px;">canvas</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">����</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">����</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Ŭ������IT��ҵ</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-canvas-红包图片效果" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/06/canvas-红包图片效果/" class="article-date">
+  	<time datetime="2016-02-06T13:36:00.000Z" itemprop="datePublished">2016-02-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      canvas学习之图片效果
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/canvas/">canvas</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>很好玩的图片效果<br><a id="more"></a><br>一个很好玩的图片效果.特效也很绚丽</p>
+<h1 id="整体思路"><a href="#整体思路" class="headerlink" title="整体思路"></a>整体思路</h1><p>获取canvas的上下文,让画布,图片,盒子三者相互适应,没有做屏幕的适配. </p>
+<p>定义一些常量  剪辑区域的半径  剪辑区域数据  </p>
+<p>定义一个初始化函数,打开网页就执行,图片就会模糊,并且剪辑区域显示 </p>
+<p>所以在初始化化函数可以定义一个函数 用来绘制画布的函数</p>
+<p>在画布函数中把图片放入画布中,然后在该函数定义一个函数用来画剪辑区域的函数 </p>
+<p>这样三者的关系就能很好的联系一起.</p>
+<p>最好点击显示 执行一个显示函数 里面也是执行绘制画布的函数 又可以复用了</p>
+<p>随机定义一个随机函数就让整个画布重新初始化  </p>
+<p>关键点,几个函数之间的关系,方便复用</p>
+<p>代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">//获得画布以及上下文</div><div class="line">var canvas = document.getElementById(&apos;canvas&apos;);</div><div class="line">var context = canvas.getContext(&apos;2d&apos;);</div><div class="line"></div><div class="line">//创建图片</div><div class="line">var image = new Image();</div><div class="line">image.src = &apos;fengjing.jpg&apos;;</div><div class="line">//画布的大小</div><div class="line">var canvasWidth = image.width;</div><div class="line">var canvasHeight = image.height;</div><div class="line"></div><div class="line">//画布的大小</div><div class="line">canvas.width = canvasWidth;</div><div class="line">canvas.height = canvasHeight;</div><div class="line"></div><div class="line">//div的宽高</div><div class="line">$(&apos;#blur-div&apos;).css(&apos;width&apos;,canvas.width +&apos;px&apos;);</div><div class="line">$(&apos;#blur-div&apos;).css(&apos;height&apos;,canvas.height +&apos;px&apos;);</div><div class="line"></div><div class="line"></div><div class="line">//图片的宽高</div><div class="line">$(&apos;#blur-image&apos;).css(&apos;width&apos;,image.width +&apos;px&apos;);</div><div class="line">$(&apos;#blur-image&apos;).css(&apos;height&apos;,image.height +&apos;px&apos;);</div><div class="line"></div><div class="line">//剪辑区域的半径</div><div class="line">var radius = canvas.width/20;</div><div class="line"></div><div class="line">//剪辑的区域数据初始化</div><div class="line">var clippingRegion = &#123;x:0,y:0,r:0&#125;;</div><div class="line"></div><div class="line">var flag=true;</div><div class="line"></div><div class="line">image.onload = function () &#123;</div><div class="line">    //初始化画布</div><div class="line">    initCanvas();</div><div class="line">&#125;</div><div class="line">//初始化画布方法</div><div class="line">function initCanvas() &#123;</div><div class="line">    //重新初始化剪辑区域的数据</div><div class="line">         clippingRegion=&#123;</div><div class="line">           x: Math.random() * (canvas.width - 2 * radius) + radius,</div><div class="line">           y: Math.random() * (canvasHeight - 2 * radius) + radius,</div><div class="line">           r: radius</div><div class="line">       &#125;;</div><div class="line">    //每次点击都初始化</div><div class="line">    clippingRegion.r=0;</div><div class="line">    //添加图片到画布</div><div class="line">    var timer=setInterval(function ()&#123;</div><div class="line">        clippingRegion.r+=5;</div><div class="line">        if(clippingRegion.r&gt;radius)&#123;</div><div class="line">            clearInterval(timer);</div><div class="line">            clippingRegion.r=radius;</div><div class="line">        &#125;;</div><div class="line">        draw(image, clippingRegion);</div><div class="line">    &#125;,30)</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">//设置剪辑区域方法</div><div class="line">function setClippingRegion(clippingRegion) &#123;</div><div class="line">    //开始路径</div><div class="line">    context.beginPath();</div><div class="line">    //画剪辑区域的圆</div><div class="line">    context.arc(clippingRegion.x, clippingRegion.y, clippingRegion.r, 0, 2 * Math.PI);</div><div class="line">    //剪辑方法 当前显示,其他消失</div><div class="line">    context.clip();</div><div class="line">&#125;</div><div class="line">//添加图片到画布方法</div><div class="line">function draw(image, clippingRegion) &#123;</div><div class="line">    //清空画布</div><div class="line">    context.clearRect(0, 0, canvas.width, canvas.height);</div><div class="line">    //保存状态</div><div class="line">    context.save();</div><div class="line">    //设置剪辑区域</div><div class="line">    setClippingRegion(clippingRegion);</div><div class="line">    //添加图片到画布</div><div class="line">    context.drawImage(image, 0, 0);</div><div class="line">    //恢复状态</div><div class="line">    context.restore();</div><div class="line">&#125;</div><div class="line"></div><div class="line">//展示图片的函数</div><div class="line">function show() &#123;</div><div class="line">    //动画</div><div class="line">    if(!flag) return;</div><div class="line">    flag=false;</div><div class="line">    var timer=setInterval(function ()&#123;</div><div class="line">        //让剪辑区域的半径足以覆盖图像 慢慢加上去</div><div class="line">        clippingRegion.r += 20;</div><div class="line">        //停止动画</div><div class="line">        if(clippingRegion.r&gt;1.2*Math.max(canvas.width,canvas.height))&#123;</div><div class="line">            clearInterval(timer);</div><div class="line">            flag=true;</div><div class="line">        &#125;</div><div class="line">        //再次调用覆盖图像</div><div class="line">        draw(image, clippingRegion);</div><div class="line">    &#125;,30)</div><div class="line"></div><div class="line">&#125;</div><div class="line">//随机位置的函数</div><div class="line">function random() &#123;</div><div class="line">    //重新初始化画布</div><div class="line">    if(flag)</div><div class="line">    initCanvas();</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/canvas-6.png" alt=""></p>
+<p><img src="/assets/blogImg/canvas-7.png" alt=""></p>
+<p><img src="/assets/blogImg/canvas-8.png" alt=""></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/06/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="canvas-红包图片效果" data-title="canvas学习之图片效果" data-url="http://www.ring1314.com/2016/02/06/canvas-红包图片效果/"  data-images="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" data-content="canvas学习之图片效果">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2017 ����
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
