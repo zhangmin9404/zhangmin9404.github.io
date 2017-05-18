@@ -138,7 +138,7 @@ body,
 }
 body {
   font-family: "微软雅黑", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   background-color: #292929;
   color: #fff;
   -webkit-overflow-scrolling: touch;
@@ -545,7 +545,7 @@ a {
   text-align: center;
   color: #0fc;
   font-weight: bolder;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 25px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -586,7 +586,7 @@ a {
 }
 #header .header-menu li a {
   color: #fff;
-  font-size: 14px;
+  font-size: 18px;
   min-width: 300px;
 }
 #header .header-menu li a:hover {
@@ -826,7 +826,7 @@ a {
   border-bottom: none;
 }
 .archives .archive-article-title {
-  font-size: 16px;
+  font-size: 28px;
   color: #ffa500;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
@@ -837,7 +837,7 @@ a {
   color: #f3c;
 }
 .archives .archive-article-title span {
-  font-size: 12px;
+  font-size: 20px;
 }
 .archive-article-inner .archive-article-header {
   position: relative;
@@ -862,11 +862,11 @@ a {
   vertical-align: middle;
   zoom: 1;
   color: #666;
-  font-size: 14px;
+  font-size: 20px;
 }
 .archive-article-inner .article-meta .archive-article-date {
   cursor: default;
-  font-size: 12px;
+  font-size: 20px;
   margin-bottom: 5px;
   margin-top: -10px;
 }
@@ -898,7 +898,7 @@ a {
   width: auto;
   max-width: 83px;
   padding-left: 8px;
-  font-size: 12px;
+  font-size: 20px;
 }
 .body-wrap {
   margin-bottom: 80px;
@@ -968,7 +968,7 @@ a {
 .article-index .brief {
   display: block;
   color: #a8a8a8;
-  font-size: 12px;
+  font-size: 24px;
   line-height: 14px;
   height: 7px;
   padding-left: 2px;
@@ -1039,7 +1039,7 @@ a {
   border: 1px solid #ccc;
   font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
   word-wrap: break-word;
-  font-size: 14px;
+  font-size: 20px;
 }
 .article-entry blockquote {
   padding: 15px 20px;
@@ -1066,7 +1066,7 @@ a {
 }
 .article-entry ul,
 .article-entry ol {
-  font-size: 14px;
+  font-size: 18px;
   margin: 10px 0px;
 }
 .article-entry li ul,
@@ -1126,13 +1126,13 @@ a {
   padding: 5px 15px;
   overflow-x: auto;
   color: #657b83;
-  font-size: 10px;
+  font-size: 20px;
   border: 1px solid #ccc;
   text-shadow: 0 1px #444;
   font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
 }
 .article-entry pre code {
-  font-size: 14px;
+  font-size: 24px;
 }
 .article-entry table {
   width: 100%;
@@ -1165,7 +1165,7 @@ a {
 }
 .article-meta {
   width: 150px;
-  font-size: 14;
+  font-size: 20px;
   text-align: right;
   position: absolute;
   right: 0;
@@ -1190,7 +1190,7 @@ a {
 .article-more-link a {
   background: #4d4d4d;
   color: #fff;
-  font-size: 12px;
+  font-size: 20px;
   padding: 2px 8px 4px;
   line-height: 16px;
   -webkit-border-radius: 2px;
@@ -1213,12 +1213,12 @@ a {
 }
 #article-nav .article-nav-link-wrap {
   margin: 0px 30px 0px 30px;
-  font-size: 14px;
+  font-size: 20px;
   color: #333;
 }
 #article-nav .article-nav-link-wrap .article-nav-title {
   display: inline-block;
-  font-size: 12px;
+  font-size: 18px;
   color: #aaa;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
@@ -1390,7 +1390,7 @@ a {
   padding: 10px 10px;
   overflow: auto;
   color: #4c4c4c;
-  line-height: 22.400000000000002px;
+  line-height: 35.2px;
 }
 .article-entry .highlight .gutter pre,
 .article-entry .gist .gist-file .gist-data .line-numbers {
@@ -1454,8 +1454,8 @@ a {
   text-shadow: none;
 }
 .article-entry .highlight .line {
-  font-size: 14px;
-  height: 22.400000000000002px;
+  font-size: 22px;
+  height: 35.2px;
 }
 .article-entry .gist {
   margin: 0 -20px;
@@ -1562,7 +1562,7 @@ pre .javascript .function {
   color: #f92672;
 }
 #footer {
-  font-size: 12px;
+  font-size: 14px;
   font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
   text-shadow: 0 1px #fff;
   position: absolute;
@@ -1599,16 +1599,16 @@ pre .javascript .function {
   margin-top: 30px;
 }
 #page-nav .page-number {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background: #4d4d4d;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
   display: inline-block;
   color: #fff;
-  line-height: 20px;
-  font-size: 12px;
+  line-height: 30px;
+  font-size: 16px;
   margin: 0 3px 30px;
 }
 #page-nav .page-number:hover {
@@ -1765,7 +1765,7 @@ pre .javascript .function {
 .switch-btn .tips-box .tips-inner li {
   padding: 4px 0;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 18px;
   color: #ddd;
 }
 .switch-btn .tips-box .tips-inner li:hover {
@@ -1961,7 +1961,7 @@ pre .javascript .function {
   display: inline-block;
   text-decoration: none;
   font-weight: normal;
-  font-size: 10px;
+  font-size: 16px;
   color: #fff;
   height: 18px;
   line-height: 18px;
@@ -2039,7 +2039,7 @@ pre .javascript .function {
   float: left;
   color: #999;
   content: "\f06c";
-  font: 16px FontAwesome;
+  font: 18px FontAwesome;
   float: left;
   margin-right: 10px;
   margin-top: 9px;
@@ -2105,11 +2105,11 @@ pre .javascript .function {
   line-height: 18px;
 }
 .title-pop-out {
-  font-size: 16px;
+  font-size: 18px;
 }
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
 }
 ::-webkit-scrollbar-button {
   width: 0;
@@ -2258,7 +2258,7 @@ pre .javascript .function {
   display: none;
 }
 form input.st-search-input_my {
-  font-size: 12px;
+  font-size: 18px;
   padding: 4px 9px 4px 27px;
   height: 20px;
   width: 190px;
