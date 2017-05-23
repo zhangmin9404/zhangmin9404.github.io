@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>贪吃蛇游戏  | zm_miner</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="初认识js锻炼">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="贪吃蛇游戏 ">
+<meta property="og:url" content="http://www.ring1314.com/2016/05/23/贪吃蛇游戏/index.html">
+<meta property="og:site_name" content="zm_miner">
+<meta property="og:description" content="初认识js锻炼">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-1cde649286763cd2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-05-23T04:28:36.814Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="贪吃蛇游戏 ">
+<meta name="twitter:description" content="初认识js锻炼">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4017085-1cde649286763cd2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  
+    <link rel="alternative" href="/atom.xml" title="zm_miner" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/log.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85415703-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/log.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">张敏</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">努力挤进IT行</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about/">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/AngularJS/" style="font-size: 13.33px;">AngularJS</a> <a href="/tags/AngularJs/" style="font-size: 20px;">AngularJs</a> <a href="/tags/Javascript/" style="font-size: 16.67px;">Javascript</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">张敏</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/log.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">张敏</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">努力挤进IT行</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about/">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-贪吃蛇游戏" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/23/贪吃蛇游戏/" class="article-date">
+  	<time datetime="2016-05-23T04:28:00.000Z" itemprop="datePublished">2016-05-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      贪吃蛇游戏 
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>贪吃蛇游戏<br><a id="more"></a></p>
+<p>实现一个简单的贪吃蛇小游戏感兴趣的可以看看敲一下,没事的时候还可以玩两把<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;utf-8&quot; /&gt;</div><div class="line">&lt;title&gt;贪吃蛇&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">(function reset()&#123;</div><div class="line">	var oTa=document.createElement(&apos;table&apos;);</div><div class="line">	var oTb=document.createElement(&apos;tbody&apos;);</div><div class="line">  var index = 0;</div><div class="line">  var snakeMove = null;</div><div class="line">  var timer = null;</div><div class="line">	for(var i=0;i&lt;40;i++)&#123;</div><div class="line">		var oTr=document.createElement(&apos;tr&apos;);</div><div class="line">		for(var j=0;j&lt;40;j++)&#123;</div><div class="line">			var oTd=document.createElement(&apos;td&apos;);</div><div class="line">			oTd.style.cssText=&apos;width:10px; height:10px; padding:0; border: 2p solid #ccc; background: #ccc;&apos;;</div><div class="line">			oTr.appendChild(oTd);</div><div class="line">		&#125;</div><div class="line">		oTb.appendChild(oTr);</div><div class="line">	&#125;</div><div class="line">	oTa.appendChild(oTb);</div><div class="line">	oTa.style.cssText=&apos;margin:60px auto 0; border:10px solid #333; background:#ccc;&apos;;</div><div class="line">	document.body.appendChild(oTa);</div><div class="line">  oTa.cellSpacing = &apos;2 &apos;;</div><div class="line">	var aTd=oTb.getElementsByTagName(&apos;td&apos;);</div><div class="line">	fruit();</div><div class="line">	function fruit()&#123;</div><div class="line">		var num=Math.floor(Math.random()*aTd.length);</div><div class="line">		if(num!=index)&#123;</div><div class="line">      index = num;</div><div class="line">		 	aTd[index].style.cssText=&apos;border: 2px solid #333; background: red;&apos;;</div><div class="line">		&#125;else&#123;</div><div class="line">			fruit();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	snake();</div><div class="line">	function snake()&#123;</div><div class="line">		var rows=oTb.rows;</div><div class="line">		var arr=[]</div><div class="line">		litleSnake();</div><div class="line">		function litleSnake()&#123;</div><div class="line">			var ini=rows.length/2-1;</div><div class="line">      arr = [[ini,ini+1]]</div><div class="line">			snakeColor(arr);</div><div class="line">		&#125;</div><div class="line">		function snakeColor(arr)&#123;</div><div class="line">			for(var i=1;i&lt;arr.length;i++)&#123;</div><div class="line">				rows[arr[i][0]].cells[arr[i][1]].style.cssText=&apos;background: #555; border: 2px solid #333;&apos;;</div><div class="line">			&#125;</div><div class="line">			rows[arr[0][0]].cells[arr[0][1]].style.cssText=&apos;background: #eee; border: 2px solid #333;&apos;;</div><div class="line">		&#125;</div><div class="line">		var json=&#123;</div><div class="line">			left  : &#123;key:true,timer:null&#125;,</div><div class="line">			up    : &#123;key:true,timer:null&#125;,</div><div class="line">			right : &#123;key:true,timer:null&#125;,</div><div class="line">			down  : &#123;key:true,timer:null&#125;</div><div class="line">		&#125;;</div><div class="line">		var aDir=[];</div><div class="line">		document.onkeydown=function (ev)&#123;</div><div class="line">			var ev=ev||event;</div><div class="line">			for(var i=37;i&lt;41;i++)&#123;</div><div class="line">				if(ev.keyCode==i &amp;&amp; ev.keyCode!=aDir[0])&#123;</div><div class="line">					aDir.unshift(ev.keyCode);</div><div class="line">					break;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			aDir.length=2;</div><div class="line">			if(Math.abs(aDir[0]-aDir[1])==2)return;</div><div class="line">			switch(ev.keyCode)&#123;</div><div class="line">        case 32:</div><div class="line">          timer ? (function()&#123;clearInterval(timer);timer=null;&#125;)() : snakeMove &amp;&amp; snakeMove();</div><div class="line">          break;</div><div class="line">				case 37:</div><div class="line">					if(!json.left.key)return;</div><div class="line">					onOff(&apos;left&apos;);</div><div class="line">					fnTimer(&apos;left&apos;,0,-1);</div><div class="line">					break;</div><div class="line">				case 38:</div><div class="line">					if(!json.up.key)return;</div><div class="line">					onOff(&apos;up&apos;);</div><div class="line">					fnTimer(&apos;up&apos;,-1,0);</div><div class="line">					break;</div><div class="line">				case 39:</div><div class="line">					if(!json.right.key)return;</div><div class="line">					onOff(&apos;right&apos;);</div><div class="line">					fnTimer(&apos;right&apos;,0,1);</div><div class="line">					break;</div><div class="line">				case 40:</div><div class="line">					if(!json.down.key)return;</div><div class="line">					onOff(&apos;down&apos;);</div><div class="line">					fnTimer(&apos;down&apos;,1,0);</div><div class="line">					break;</div><div class="line">			&#125; //switch</div><div class="line">		&#125;; //onkeydown</div><div class="line">		function onOff(dir)&#123;</div><div class="line">			for(var i in json)&#123;</div><div class="line">				if(i==dir)&#123;</div><div class="line">					json[i].key=false;</div><div class="line">				&#125;else&#123;</div><div class="line">					json[i].key=true;</div><div class="line">					clearInterval(timer);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		function fnTimer(dir,m,n)&#123;</div><div class="line">      snakeMove = function()&#123; fnTimer(dir,m,n) &#125;;</div><div class="line">			timer=setInterval(function ()&#123;</div><div class="line">				if(arr[0][0]+m&lt;0||arr[0][1]+n&lt;0||arr[0][0]+m&gt;39||arr[0][1]+n&gt;39)&#123;</div><div class="line">					clearInterval(timer);</div><div class="line">					fail();</div><div class="line">					return;</div><div class="line">				&#125;</div><div class="line">				for(var i=2;i&lt;arr.length;i++)&#123;</div><div class="line"></div><div class="line">					if( arr[0][0]+m==arr[i][0] &amp;&amp; arr[0][1]+n==arr[i][1] )&#123;</div><div class="line"></div><div class="line">						clearInterval(timer);</div><div class="line">						fail();</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">				arr.unshift([arr[0][0]+m,arr[0][1]+n]);</div><div class="line">				if(rows[arr[0][0]].cells[arr[0][1]].style.backgroundColor!=&apos;red&apos;)&#123;</div><div class="line">					snakeTail();</div><div class="line"></div><div class="line">				&#125;else&#123;</div><div class="line">					fruit();</div><div class="line">				&#125;</div><div class="line"></div><div class="line">			&#125;,100);</div><div class="line">		&#125;</div><div class="line">		function fail()&#123;</div><div class="line">			alert(&apos;OVER! 游戏结束！重新开始&apos;);</div><div class="line">			document.body.removeChild(oTa);</div><div class="line">			reset();</div><div class="line">		&#125;</div><div class="line">		function snakeTail()&#123;</div><div class="line">			rows[arr[arr.length-1][0]].cells[arr[arr.length-1][1]].style.cssText=&apos;background: #ccc; border: 2px solid #ccc;&apos;;</div><div class="line">			arr.pop(arr[arr.length-1]);</div><div class="line">			snakeColor(arr);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">  !window.pop &amp;&amp; (function()&#123;alert(&apos;  方向键：移动小蛇游戏，空格键： 暂停/开始游戏&apos;); window.pop = 1;&#125;)()</div><div class="line">&#125;)();</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-1cde649286763cd2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="QQ截图20170420113138.png"></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/29/on事件与addevent事件的区别/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          on事件与addevent事件的区别
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/02/06/canvas-红包图片效果/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">canvas学习之图片效果</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2016 张敏
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">carrotming</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>

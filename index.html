@@ -131,7 +131,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/AngularJs/" style="font-size: 20px;">AngularJs</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a>
+						<a href="/tags/AngularJS/" style="font-size: 13.33px;">AngularJS</a> <a href="/tags/AngularJs/" style="font-size: 20px;">AngularJs</a> <a href="/tags/Javascript/" style="font-size: 16.67px;">Javascript</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a>
 					</div>
 				</section>
 				
@@ -183,11 +183,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-6.$http服务" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-7.跨域" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/05/23/6.$http服务/" class="article-date">
-  	<time datetime="2017-05-23T03:49:22.369Z" itemprop="datePublished">2017-05-23</time>
+      <a href="/2017/03/16/7.跨域/" class="article-date">
+  	<time datetime="2017-03-16T12:05:00.000Z" itemprop="datePublished">2017-03-16</time>
 </a>
     </div>
   
@@ -196,46 +196,112 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/16/7.跨域/">
+        跨域
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.把文件夹，创建在服务器的目录当中。</p>
-<p>2.在浏览器当中，查看文件<br><a href="http://localhost/day5-code/" target="_blank" rel="external">http://localhost/day5-code/</a></p>
-<p>3.到phpstorm当中，进行配置  setting -&gt;deployment</p>
-<p>4.点击绿色添加，把文件地址，贴入进去。</p>
-<p>Ajax的基本原理复习<br><img src="http://upload-images.jianshu.io/upload_images/4017085-9e2b1c6753e243bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;!--</div><div class="line">设置在浏览器中运行可以直接跳到本机127.0.0.1 或者  location</div><div class="line">setting-&gt;deployment-&gt; + name:php 随便写-&gt;选择Local or menthed</div><div class="line">--&gt;</div><div class="line">&lt;script&gt;</div><div class="line">   /* 向服务器要数据*/</div><div class="line">   var xhr = new XMLHttpRequest();</div><div class="line">   /*想哪个服务器要请求*/</div><div class="line">   xhr.open(&quot;get&quot;,&apos;zm.php&apos;);</div><div class="line">   /*开始要数据*/</div><div class="line">   xhr.send();</div><div class="line">   /*监听服务器有没有把数据给我*/</div><div class="line">   xhr.onreadystatechange = function () &#123;</div><div class="line">       /*收到了服务器给的数据*/</div><div class="line">      if(xhr.readyState == 4 &amp;&amp; xhr.status ==200)&#123;</div><div class="line">          /*responseText 就是服务器给的数据*/</div><div class="line">          console.log(xhr.responseText);</div><div class="line">      &#125;</div><div class="line">   &#125;;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/4017085-28e205a194e94375.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h1 id="http服务"><a href="#http服务" class="headerlink" title="$http服务"></a>$http服务</h1><h2 id="http服务-get请求"><a href="#http服务-get请求" class="headerlink" title="$http服务-get请求"></a>$http服务-get请求</h2><p>没有传递参数的情况</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;script src=angular.js&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    /*1.创建模块*/</div><div class="line">    var app = angular.module(&apos;app&apos;,[]);</div><div class="line">    /*2.创建控制器*/</div><div class="line">    app.controller(&quot;zmController&quot;,[&quot;$scope&quot;,&quot;$http&quot;,function($scope,$http)&#123;</div><div class="line">        //以前都是我自己传入数据.现在我从数据库中传入</div><div class="line">//        $scope.res=&quot;zm&quot;;</div><div class="line">        $http(&#123;</div><div class="line">            url:&apos;zm.php&apos;,/*请求地址*/</div><div class="line">            method:&apos;get&apos;,/*请求类型*/</div><div class="line">        &#125;).success(function (res) /*res是请求地址中的内容*/ &#123;/*请求成功时,回调*/</div><div class="line">            $scope.res=res;</div><div class="line">        &#125;).error(function (error)&#123;</div><div class="line">            console.log(error);</div><div class="line">        &#125;)</div><div class="line">    &#125;])</div><div class="line">    /*3.绑定模板*/</div><div class="line">    /*4.绑定控制器*/</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;body ng-app=&apos;app&apos; ng-controller=&apos;zmController&apos;&gt;</div><div class="line">&lt;p&gt;&#123;&#123;res&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/4017085-f17b8ba5d12d404a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>get的查询方式的传参方式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;script src=angular.js&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    /*1.创建模块*/</div><div class="line">    var app = angular.module(&apos;app&apos;,[]);</div><div class="line">    /*2.创建控制器*/</div><div class="line">    app.controller(&quot;zmController&quot;,[&quot;$scope&quot;,&quot;$http&quot;,function($scope,$http)&#123;</div><div class="line">        $http(&#123;</div><div class="line">            url: &apos;get.php&apos;, /*请求地址*/</div><div class="line">            method: &apos;get&apos;, /*q请求类型*/</div><div class="line">            params: &#123;</div><div class="line">                flag: &apos;zm&apos; /*一定要与服务器那边的值相同和相等*/</div><div class="line">            &#125;</div><div class="line">        &#125;).success(function (res) &#123;/*请求成功时,回调*/</div><div class="line"></div><div class="line">            $scope.res = res; //拿到服务器的数据</div><div class="line">        &#125;).error(function(error)&#123;/*请求失败时,回调*/</div><div class="line">            console.log(error);</div><div class="line">        &#125;)</div><div class="line"></div><div class="line">    &#125;])</div><div class="line"></div><div class="line">    /*3.绑定模板*/</div><div class="line">    /*4.绑定控制器*/</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;body ng-app=&apos;app&apos; ng-controller=&apos;zmController&apos;&gt;</div><div class="line">&lt;p&gt;&#123;&#123;res&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/4017085-155059afcd28c8f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<pre><code>1.url: &apos;get.php?flag=zm&apos;,
-
- 2.params: {
-                flag: &apos;zm&apos;     /*一定要与服务器那    边的值相同和相等*/
-            }
-</code></pre><h2 id="http服务-post请求"><a href="#http服务-post请求" class="headerlink" title="$http服务-post请求"></a>$http服务-post请求</h2><h3 id="post必须得要设置请求头"><a href="#post必须得要设置请求头" class="headerlink" title="post必须得要设置请求头"></a>post必须得要设置请求头</h3><pre><code>headers: {&apos;Content-Type&apos;:&apos;application/x-www-form-urlencoded&apos; }
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;script src=angular.js&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    /*1.创建模块*/</div><div class="line">    var app = angular.module(&apos;app&apos;,[]);</div><div class="line">    /*2.创建控制器*/</div><div class="line">    app.controller(&quot;zmController&quot;,[&quot;$scope&quot;,&quot;$http&quot;,function($scope,$http)&#123;</div><div class="line">        $http(&#123;</div><div class="line">            url: &apos;post.php&apos;, /*请求地址*/</div><div class="line">            method: &apos;post&apos;, /*请求类型*/</div><div class="line">           headers: &#123;/*</div><div class="line">           post必须得要设置请求头</div><div class="line">           默认,不加请求头,是以json  Content-Type:application/json;</div><div class="line">           charset=UTF-8</div><div class="line"></div><div class="line">           以php为例,post是接收不到json的,所以就会发生错误 &#123;&#125;形式</div><div class="line"></div><div class="line">           post接收的是formData 是key:value形式</div><div class="line"></div><div class="line">           */</div><div class="line">               &apos;Content-Type&apos;:&apos;application/x-www-form-urlencoded&apos; &#125;,</div><div class="line">//            data:&#123;</div><div class="line">///          *默认是以json形式传递.*/</div><div class="line">//                flag: &apos;zm&apos; /*一定要与服务器那边的值相同和相等*/</div><div class="line">//            &#125;</div><div class="line"></div><div class="line">            data:&apos;flag=zm&apos;</div><div class="line"></div><div class="line">        &#125;).success(function (res) &#123;/*请求成功时,回调*/</div><div class="line"></div><div class="line">            $scope.res = res;</div><div class="line">        &#125;).error(function(error)&#123;/*请求失败时,回调*/</div><div class="line">            console.log(error);</div><div class="line">        &#125;)</div><div class="line"></div><div class="line">    &#125;])</div><div class="line"></div><div class="line">    /*3.绑定模板*/</div><div class="line">    /*4.绑定控制器*/</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;body ng-app=&apos;app&apos; ng-controller=&apos;zmController&apos;&gt;</div><div class="line">&lt;p&gt;&#123;&#123;res&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/4017085-fdb53fd6450b83dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="http服务-get请求的一个小demo"><a href="#http服务-get请求的一个小demo" class="headerlink" title="$http服务-get请求的一个小demo"></a>$http服务-get请求的一个小demo</h3><p><strong>系统给出的是一个json文件,要使用此文件首先需要转化成php文件格式</strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4017085-bff379083857dc11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4017085-8ab255bc22205a53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;script src=angular.js&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    /*1.创建模块*/</div><div class="line">    var app = angular.module(&apos;app&apos;,[]);</div><div class="line">    /*2.创建控制器*/</div><div class="line">    app.controller(&quot;zmController&quot;,[&quot;$scope&quot;,&apos;$http&apos;,function($scope,$http)&#123;</div><div class="line">        $http(&#123;</div><div class="line">            url:&apos;students.php&apos;,</div><div class="line">            method:&apos;get&apos;,</div><div class="line">            params:&#123;</div><div class="line">                flag:&apos;zm&apos;</div><div class="line">            &#125;</div><div class="line">        &#125;).success(function(res)&#123;</div><div class="line">            $scope.students=res;</div><div class="line">            //接受服务器的值</div><div class="line">        &#125;).error(function(error)&#123;</div><div class="line">            console.log(error);</div><div class="line">        &#125;)</div><div class="line">    &#125;])</div><div class="line"></div><div class="line">    /*3.绑定模板*/</div><div class="line">    /*4.绑定控制器*/</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;body ng-app=&apos;app&apos; ng-controller=&apos;zmController&apos;&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li ng-repeat=&apos;student in students&apos;&gt;  //遍历服务器的值</div><div class="line">    &#123;&#123;student.name&#125;&#125;:&#123;&#123;student.address&#125;&#125;:&#123;&#123;student.age&#125;&#125;</div><div class="line">    &lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/4017085-c5fe2b7b3fc23adb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-
+        <p>原生的jsonp跨域 angularJs的跨域<br>
       
     </div>
     
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li></ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/AngularJS/">AngularJS</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
     </div>
+      
+        <p class="article-more-link">
+          <a  href="/2017/03/16/7.跨域/#more">more >></a>
+        </p>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-6.$http服务" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/16/6.$http服务/" class="article-date">
+  	<time datetime="2017-03-16T07:45:00.000Z" itemprop="datePublished">2017-03-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/16/6.$http服务/">
+        $http服务
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>服务中的$http服务<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/AngularJS/">AngularJS</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+        <p class="article-more-link">
+          <a  href="/2017/03/16/6.$http服务/#more">more >></a>
+        </p>
       
     
   </div>
@@ -645,11 +711,11 @@
 
 
   
-    <article id="post-canvas-红包图片效果" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-作用域-变量和函数提升" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/06/canvas-红包图片效果/" class="article-date">
-  	<time datetime="2016-02-06T13:36:00.000Z" itemprop="datePublished">2016-02-06</time>
+      <a href="/2016/06/16/作用域-变量和函数提升/" class="article-date">
+  	<time datetime="2016-06-16T06:45:00.000Z" itemprop="datePublished">2016-06-16</time>
 </a>
     </div>
   
@@ -662,8 +728,8 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/06/canvas-红包图片效果/">
-        canvas学习之图片效果
+      <a class="article-title" href="/2016/06/16/作用域-变量和函数提升/">
+        作用域-变量和函数提升
         
       </a>
     </h1>
@@ -674,7 +740,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>很好玩的图片效果<br>
+        <p>作用域-变量和函数提升<br>
       
     </div>
     
@@ -682,12 +748,12 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
 	</div>
 
       
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/canvas/">canvas</a>
+	<a class="article-category-link" href="/categories/Javascript/">Javascript</a>
 	</div>
 
 
@@ -696,7 +762,7 @@
     </div>
       
         <p class="article-more-link">
-          <a  href="/2016/02/06/canvas-红包图片效果/#more">more >></a>
+          <a  href="/2016/06/16/作用域-变量和函数提升/#more">more >></a>
         </p>
       
     
@@ -711,6 +777,76 @@
 
 
   
+    <article id="post-on事件与addevent事件的区别" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/29/on事件与addevent事件的区别/" class="article-date">
+  	<time datetime="2016-05-28T17:45:00.000Z" itemprop="datePublished">2016-05-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/29/on事件与addevent事件的区别/">
+        on事件与addevent事件的区别
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>on事件与addevent事件的区别<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/29/on事件与addevent事件的区别/#more">more >></a>
+        </p>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>跨域 | zm_miner</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="跨域原理">
+<meta name="keywords" content="AngularJS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨域">
+<meta property="og:url" content="http://www.ring1314.com/2017/03/16/7.跨域/index.html">
+<meta property="og:site_name" content="zm_miner">
+<meta property="og:description" content="跨域原理">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-aa5703887ca3604d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-5836f829d59227b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-05-23T06:31:42.284Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="跨域">
+<meta name="twitter:description" content="跨域原理">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4017085-aa5703887ca3604d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  
+    <link rel="alternative" href="/atom.xml" title="zm_miner" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/log.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85415703-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/log.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">张敏</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">努力挤进IT行</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about/">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/AngularJS/" style="font-size: 13.33px;">AngularJS</a> <a href="/tags/AngularJs/" style="font-size: 20px;">AngularJs</a> <a href="/tags/Javascript/" style="font-size: 16.67px;">Javascript</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">张敏</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/log.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">张敏</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">努力挤进IT行</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about/">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-7.跨域" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/16/7.跨域/" class="article-date">
+  	<time datetime="2017-03-16T12:05:00.000Z" itemprop="datePublished">2017-03-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      跨域
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/AngularJS/">AngularJS</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原生的jsonp跨域 angularJs的跨域<br><a id="more"></a></p>
+<h4 id="1-什么是跨域"><a href="#1-什么是跨域" class="headerlink" title="1.什么是跨域?"></a>1.什么是跨域?</h4><p> 不同域名之间进行访问</p>
+<h4 id="2-同源策略"><a href="#2-同源策略" class="headerlink" title="2.同源策略?"></a>2.同源策略?</h4><p> 协议,主机地址,端口都一致</p>
+<p> <a href="http://localhost:8080/index" target="_blank" rel="external">http://localhost:8080/index</a></p>
+<p><a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a></p>
+<p><a href="http://www.sina.cn" target="_blank" rel="external">http://www.sina.cn</a></p>
+<h4 id="3-是谁造成了跨域？"><a href="#3-是谁造成了跨域？" class="headerlink" title="3.是谁造成了跨域？"></a>3.是谁造成了跨域？</h4><p>  是浏览器造成的跨域。</p>
+<h4 id="4-为什么会有跨域？"><a href="#4-为什么会有跨域？" class="headerlink" title="4.为什么会有跨域？"></a>4.为什么会有跨域？</h4><p> 为了数据的安全。</p>
+<p> 在网站中输入自己的用户名和密码,当记住用户名和密码时,浏览器就记住了你的用户名和密码,如果做得不安全的话,别人可以往你的网站中偷偷的注入代码,然后就可以访问浏览器的数据,他就可以把你的用户名和密码往自己的网站发送,但是域名不同,而浏览器又不允许跨域访问,所以安全性较高,就有了跨域这一说法</p>
+<h4 id="5-你在开发当中是如何解决跨域问题？"><a href="#5-你在开发当中是如何解决跨域问题？" class="headerlink" title="5.你在开发当中是如何解决跨域问题？"></a>5.你在开发当中是如何解决跨域问题？</h4><p>  jsonp解决跨域</p>
+<p> 往浏览器当中安装插件(不建议使用,治标不治本)</p>
+<h4 id="5-jsonp与Ajax有关系嘛？"><a href="#5-jsonp与Ajax有关系嘛？" class="headerlink" title="5.jsonp与Ajax有关系嘛？"></a>5.jsonp与Ajax有关系嘛？</h4><p>Ajax它是javascipt提供的方法，进行数据的请求。使用它请求数据时，跨域时拿到不数据。</p>
+<p> jsonp解决跨域的一种方案。</p>
+<h4 id="6-jsonp原理是怎么做的？"><a href="#6-jsonp原理是怎么做的？" class="headerlink" title="6.jsonp原理是怎么做的？"></a>6.jsonp原理是怎么做的？</h4><p>  借助标签的src属性进行数据请求。</p>
+<p> 1.使用src，请求数据</p>
+<pre><code>&lt;script src=&quot;http://datainfo.duapp.com/shopdata/getGoods.php?callback=callback&quot;&gt;
+</code></pre><p> 2.在本地声明一个方法</p>
+<pre><code>   function callback(args) {
+console.log(args);
+}
+</code></pre><p> 3。要在服务端要处理跨域</p>
+<pre><code>$res = $_GET[&apos;callback&apos;];
+echo $res.&quot;(&apos;我是服务的数据&apos;)&quot;;
+</code></pre><p> <strong>demo1:</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!--如果服务器返回的是js代码，那么浏览器就会直接执行js代码--&gt;</div><div class="line">&lt;!--借助浏览器的这个特性来实现跨域--&gt;</div><div class="line">&lt;script src=&apos;jsonp.php&apos;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>jsonp.php中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo &apos;alert(&quot;hello&quot;)&apos;;</div></pre></td></tr></table></figure></p>
+<p>运行结果:直接返回js代码的运行结果</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-aa5703887ca3604d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><strong>demo2:</strong><br>既然是服务器返回的是js代码时,浏览区可以直接运行js代码 </p>
+<p>那么我可以在服务器端直接输出一个函数</p>
+<pre><code>echo &quot;fn()&quot;;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function fn()&#123;</div><div class="line">        alert(&quot;执行了前端的alert&quot;);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>弹出”执行了前端的alert”</p>
+<p><strong>demo3:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;script src=angular.js&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    </div><div class="line">   function fn()&#123;</div><div class="line">        alert(&quot;执行了前端的alert&quot;);</div><div class="line">    &#125;</div><div class="line">     /*浏览器从上往下走,先声明一个函数,</div><div class="line">     向jsonp发送一个请求 我告诉你传递了一个callback 然后用GET方式来接受callback,</div><div class="line">     接受的值是fn,所以php中res就是fn*/</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;script src=&apos;jsonp.php?callback=fn&apos;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>php:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$res=$_GET[&apos;callback&apos;];/*res就是fn*/</div><div class="line">echo $res.&quot;()&quot;;</div><div class="line">/*给什么名称执行的就是哪个函数*/</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-5836f829d59227b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><strong>demo4:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;script src=angular.js&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    </div><div class="line">   function fn(args)&#123;</div><div class="line">     alert(args);</div><div class="line">     &#125;</div><div class="line">     /*浏览器从上往下走,先声明一个函数,</div><div class="line">     向jsonp发送一个请求 我告诉你传递了一个callback 然后用GET方式来接受callback,</div><div class="line">     接受的值是fn,所以php中res就是fn*/</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;script src=&apos;jsonp.php?callback=fn&apos;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>php:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/*也可以传递参数*/</div><div class="line">echo $res.&quot;(&apos;我是服务器的数据&apos;)&quot;;</div><div class="line">/*传参数,执行这个函数的时候必须有个参数*/</div></pre></td></tr></table></figure></p>
+<p><strong>demo5:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line"> function callback(args)&#123;</div><div class="line">        console.log(args);</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;script src=&quot;http://datainfo.duapp.com/shopdata/getGoods.php?callback=callback&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;!--为什么写callback</div><div class="line">是因为在此网址中的network下面的preview中的方法名称是callback 如果不叫这个名字 运行不出来结果--&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p>拿到了数组,数组里有数据</p>
+<h3 id="跨域的步骤"><a href="#跨域的步骤" class="headerlink" title="跨域的步骤"></a>跨域的步骤</h3><p><strong>使用src属性进行数据请求的时候出现的几种方式:</strong></p>
+<p>   <strong>1.使用src，请求数据</strong></p>
+<script src="http://datainfo.duapp.com/shopdata/getGoods.php?callback=callback">
+
+<p>   <strong>2.在本地声明一个方法</strong></p>
+<p>function callback(args) {<br>console.log(args);<br>}</p>
+<p><strong>3.要在服务端要处理跨域</strong></p>
+<p>$res = $_GET[‘callback’];<br>echo $res.”(‘我是服务的数据’)”;</p>
+<h1 id="http跨域-angularJs跨域"><a href="#http跨域-angularJs跨域" class="headerlink" title="$http跨域(angularJs跨域)"></a>$http跨域(angularJs跨域)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;script src=angular.js&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    /*1.创建模块*/</div><div class="line">    var app = angular.module(&apos;app&apos;,[]);</div><div class="line">    /*2.创建控制器*/</div><div class="line">    app.controller(&quot;zmController&quot;, [&quot;$scope&quot;, &quot;$http&quot;, function ($scope, $http) &#123;</div><div class="line">//$http就相当于是对原生的Ajax进行封装,对Ajax进行跨域时拿不到数据,打印时拿不到,所以不能通过这种方式拿数据</div><div class="line">        $http(&#123;</div><div class="line">            /*http://localhost:63342/mywebstorm/%E5%B0%8F%E7%A0%81%E5%93%A5/%E7%BB%83%E4%B9%A0/angularJs/day03/7.$http.html?_ijt=31parnf386gfjv1vgmituhflrs  当前的路径*/</div><div class="line">            url: &apos;http://127.0.0.1/argular/day03/get.php&apos;, /*我现在要访问phpday03下面的get.post请求  我现在不在这个文件夹下面*/</div><div class="line">            method: &apos;get&apos;,</div><div class="line">            params: &#123;</div><div class="line">                flag: &apos;zm&apos;</div><div class="line">            &#125;</div><div class="line">        &#125;).success(function (regs) &#123;</div><div class="line">            console.log(regs);</div><div class="line">        &#125;).error(function (error) &#123;</div><div class="line">            console.log(error);</div><div class="line">        &#125;)</div><div class="line">        /*看响应的结果 get.php status==200 响应成功*/</div><div class="line">        /*看respond里服务器的数据有没有给我们 就是要给我们 在打印台没有数据 并且还会报错*/</div><div class="line"></div><div class="line"></div><div class="line">    &#125;]);</div><div class="line"></div><div class="line"></div><div class="line">    /*3.绑定模板*/</div><div class="line">    /*4.绑定控制器*/</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;body ng-app=&apos;app&apos; ng-controller=&apos;zmController&apos;&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>php</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$res = $_GET[&apos;flag&apos;];</div><div class="line"></div><div class="line">if($res == &quot;zm&quot;)&#123;</div><div class="line">    echo &quot;服务器数据&quot;;</div><div class="line">&#125;</div><div class="line">else&#123;</div><div class="line">    echo &quot;非法数据&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>打印时会报错,但是我已经拿到了响应结果.在network中可以看到”服务器数据”拿到了只是不给我,所以我不能使用这种方式,应该使用跨域的方式.</p>
+<p>下面使用原生的jsonp的方案:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;script src=angular.js&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    /*1.创建模块*/</div><div class="line">    var app = angular.module(&apos;app&apos;,[]);</div><div class="line">    /*2.创建控制器*/</div><div class="line">    app.controller(&quot;zmController&quot;, [&quot;$scope&quot;, &quot;$http&quot;, function ($scope, $http) &#123;</div><div class="line">    &#125;]);</div><div class="line">    //我们使用jsonp方式</div><div class="line">    /*2.声明一个方法*/</div><div class="line">    function callback(args)&#123;</div><div class="line">        console.log(args);</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;!--1,请求一个路径地址--&gt;</div><div class="line">&lt;script src=&quot;http://127.0.0.1/argular/day03/get.php?callback=callback&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;!--3.在服务器段进行接收处理 在get.php中进行处理--&gt;</div><div class="line">&lt;body ng-app=&apos;app&apos; ng-controller=&apos;zmController&apos;&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>php</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$callback = $_GET[&apos;callback&apos;];</div><div class="line">echo $callback.&quot;(&apos;我是服务器的数据&apos;)&quot;;</div></pre></td></tr></table></figure>
+<p>一下代码中使用angularJs帮我们在内部偷偷做了,第一步的标签就不需要了,第二步的声明函数也不需要我做了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;script src=angular.js&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    /*1.创建模块*/</div><div class="line">    var app = angular.module(&apos;app&apos;,[]);</div><div class="line">    /*2.创建控制器*/</div><div class="line">    app.controller(&quot;zmController&quot;, [&quot;$scope&quot;, &quot;$http&quot;, function ($scope, $http) &#123;</div><div class="line">        $http(&#123;</div><div class="line">            /*http://localhost:63342/mywebstorm/%E5%B0%8F%E7%A0%81%E5%93%A5/%E7%BB%83%E4%B9%A0/angularJs/day03/7.$http.html?_ijt=31parnf386gfjv1vgmituhflrs  当前的路径*/</div><div class="line">            url: &apos;http://127.0.0.1/argular/day03/get.php&apos;, /*我现在要访问phpday03下面的get.post请求*/</div><div class="line">            method: &apos;jsonp&apos;,</div><div class="line">            params: &#123;</div><div class="line">              callback:&apos;JSON_CALLBACK&apos;/*内部自动帮我做跨域处理*/</div><div class="line">                /*</div><div class="line">                1.帮我创建了一个script标签src=url</div><div class="line">                2.创建声明了一个function angular.callbacks._0()&#123;</div><div class="line">                args传入的数据</div><div class="line">                &#125;</div><div class="line"> */</div><div class="line">            &#125;</div><div class="line">        &#125;).success(function (regs) &#123;</div><div class="line">            console.log(regs);</div><div class="line">        &#125;).error(function (error) &#123;</div><div class="line">            console.log(error);</div><div class="line">        &#125;)</div><div class="line">     </div><div class="line">    &#125;]);</div><div class="line"></div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;body ng-app=&apos;app&apos; ng-controller=&apos;zmController&apos;&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>php<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$callback = $_GET[&apos;callback&apos;];   //$callback他的值就是angular_0</div><div class="line">echo $callback.&quot;(&apos;我是服务器的数据&apos;)&quot;;</div></pre></td></tr></table></figure></p>
+</script>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/03/16/6.$http服务/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">$http服务</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2016 张敏
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">carrotming</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>

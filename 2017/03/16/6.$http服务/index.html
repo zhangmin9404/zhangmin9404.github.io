@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>$http服务 | zm_miner</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="get请求 post请求">
+<meta name="keywords" content="AngularJS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="$http服务">
+<meta property="og:url" content="http://www.ring1314.com/2017/03/16/6.$http服务/index.html">
+<meta property="og:site_name" content="zm_miner">
+<meta property="og:description" content="get请求 post请求">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-9e2b1c6753e243bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-28e205a194e94375.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-f17b8ba5d12d404a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-155059afcd28c8f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-fdb53fd6450b83dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-bff379083857dc11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-8ab255bc22205a53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-c5fe2b7b3fc23adb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-05-23T06:29:53.035Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="$http服务">
+<meta name="twitter:description" content="get请求 post请求">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4017085-9e2b1c6753e243bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  
+    <link rel="alternative" href="/atom.xml" title="zm_miner" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/log.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85415703-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/log.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">张敏</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">努力挤进IT行</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about/">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/AngularJS/" style="font-size: 13.33px;">AngularJS</a> <a href="/tags/AngularJs/" style="font-size: 20px;">AngularJs</a> <a href="/tags/Javascript/" style="font-size: 16.67px;">Javascript</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">张敏</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/log.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">张敏</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">努力挤进IT行</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about/">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-6.$http服务" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/16/6.$http服务/" class="article-date">
+  	<time datetime="2017-03-16T07:45:00.000Z" itemprop="datePublished">2017-03-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      $http服务
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/AngularJS/">AngularJS</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>服务中的$http服务<br><a id="more"></a></p>
+<p>1.把文件夹，创建在服务器的目录当中。</p>
+<p>2.在浏览器当中，查看文件<br><a href="http://localhost/day5-code/" target="_blank" rel="external">http://localhost/day5-code/</a></p>
+<p>3.到phpstorm当中，进行配置  setting -&gt;deployment</p>
+<p>4.点击绿色添加，把文件地址，贴入进去。</p>
+<p>Ajax的基本原理复习<br><img src="http://upload-images.jianshu.io/upload_images/4017085-9e2b1c6753e243bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;!--</div><div class="line">设置在浏览器中运行可以直接跳到本机127.0.0.1 或者  location</div><div class="line">setting-&gt;deployment-&gt; + name:php 随便写-&gt;选择Local or menthed</div><div class="line">--&gt;</div><div class="line">&lt;script&gt;</div><div class="line">   /* 向服务器要数据*/</div><div class="line">   var xhr = new XMLHttpRequest();</div><div class="line">   /*想哪个服务器要请求*/</div><div class="line">   xhr.open(&quot;get&quot;,&apos;zm.php&apos;);</div><div class="line">   /*开始要数据*/</div><div class="line">   xhr.send();</div><div class="line">   /*监听服务器有没有把数据给我*/</div><div class="line">   xhr.onreadystatechange = function () &#123;</div><div class="line">       /*收到了服务器给的数据*/</div><div class="line">      if(xhr.readyState == 4 &amp;&amp; xhr.status ==200)&#123;</div><div class="line">          /*responseText 就是服务器给的数据*/</div><div class="line">          console.log(xhr.responseText);</div><div class="line">      &#125;</div><div class="line">   &#125;;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-28e205a194e94375.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h1 id="http服务"><a href="#http服务" class="headerlink" title="$http服务"></a>$http服务</h1><h2 id="http服务-get请求"><a href="#http服务-get请求" class="headerlink" title="$http服务-get请求"></a>$http服务-get请求</h2><p>没有传递参数的情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;script src=angular.js&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    /*1.创建模块*/</div><div class="line">    var app = angular.module(&apos;app&apos;,[]);</div><div class="line">    /*2.创建控制器*/</div><div class="line">    app.controller(&quot;zmController&quot;,[&quot;$scope&quot;,&quot;$http&quot;,function($scope,$http)&#123;</div><div class="line">        //以前都是我自己传入数据.现在我从数据库中传入</div><div class="line">//        $scope.res=&quot;zm&quot;;</div><div class="line">        $http(&#123;</div><div class="line">            url:&apos;zm.php&apos;,/*请求地址*/</div><div class="line">            method:&apos;get&apos;,/*请求类型*/</div><div class="line">        &#125;).success(function (res) /*res是请求地址中的内容*/ &#123;/*请求成功时,回调*/</div><div class="line">            $scope.res=res;</div><div class="line">        &#125;).error(function (error)&#123;</div><div class="line">            console.log(error);</div><div class="line">        &#125;)</div><div class="line">    &#125;])</div><div class="line">    /*3.绑定模板*/</div><div class="line">    /*4.绑定控制器*/</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;body ng-app=&apos;app&apos; ng-controller=&apos;zmController&apos;&gt;</div><div class="line">&lt;p&gt;&#123;&#123;res&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-f17b8ba5d12d404a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>get的查询方式的传参方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;script src=angular.js&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    /*1.创建模块*/</div><div class="line">    var app = angular.module(&apos;app&apos;,[]);</div><div class="line">    /*2.创建控制器*/</div><div class="line">    app.controller(&quot;zmController&quot;,[&quot;$scope&quot;,&quot;$http&quot;,function($scope,$http)&#123;</div><div class="line">        $http(&#123;</div><div class="line">            url: &apos;get.php&apos;, /*请求地址*/</div><div class="line">            method: &apos;get&apos;, /*q请求类型*/</div><div class="line">            params: &#123;</div><div class="line">                flag: &apos;zm&apos; /*一定要与服务器那边的值相同和相等*/</div><div class="line">            &#125;</div><div class="line">        &#125;).success(function (res) &#123;/*请求成功时,回调*/</div><div class="line"></div><div class="line">            $scope.res = res; //拿到服务器的数据</div><div class="line">        &#125;).error(function(error)&#123;/*请求失败时,回调*/</div><div class="line">            console.log(error);</div><div class="line">        &#125;)</div><div class="line"></div><div class="line">    &#125;])</div><div class="line"></div><div class="line">    /*3.绑定模板*/</div><div class="line">    /*4.绑定控制器*/</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;body ng-app=&apos;app&apos; ng-controller=&apos;zmController&apos;&gt;</div><div class="line">&lt;p&gt;&#123;&#123;res&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-155059afcd28c8f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<pre><code>1.url: &apos;get.php?flag=zm&apos;,
+
+ 2.params: {
+                flag: &apos;zm&apos;     /*一定要与服务器那    边的值相同和相等*/
+            }
+</code></pre><h2 id="http服务-post请求"><a href="#http服务-post请求" class="headerlink" title="$http服务-post请求"></a>$http服务-post请求</h2><h3 id="post必须得要设置请求头"><a href="#post必须得要设置请求头" class="headerlink" title="post必须得要设置请求头"></a>post必须得要设置请求头</h3><pre><code>headers: {&apos;Content-Type&apos;:&apos;application/x-www-form-urlencoded&apos; }
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;script src=angular.js&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    /*1.创建模块*/</div><div class="line">    var app = angular.module(&apos;app&apos;,[]);</div><div class="line">    /*2.创建控制器*/</div><div class="line">    app.controller(&quot;zmController&quot;,[&quot;$scope&quot;,&quot;$http&quot;,function($scope,$http)&#123;</div><div class="line">        $http(&#123;</div><div class="line">            url: &apos;post.php&apos;, /*请求地址*/</div><div class="line">            method: &apos;post&apos;, /*请求类型*/</div><div class="line">           headers: &#123;/*</div><div class="line">           post必须得要设置请求头</div><div class="line">           默认,不加请求头,是以json  Content-Type:application/json;</div><div class="line">           charset=UTF-8</div><div class="line"></div><div class="line">           以php为例,post是接收不到json的,所以就会发生错误 &#123;&#125;形式</div><div class="line"></div><div class="line">           post接收的是formData 是key:value形式</div><div class="line"></div><div class="line">           */</div><div class="line">               &apos;Content-Type&apos;:&apos;application/x-www-form-urlencoded&apos; &#125;,</div><div class="line">//            data:&#123;</div><div class="line">///          *默认是以json形式传递.*/</div><div class="line">//                flag: &apos;zm&apos; /*一定要与服务器那边的值相同和相等*/</div><div class="line">//            &#125;</div><div class="line"></div><div class="line">            data:&apos;flag=zm&apos;</div><div class="line"></div><div class="line">        &#125;).success(function (res) &#123;/*请求成功时,回调*/</div><div class="line"></div><div class="line">            $scope.res = res;</div><div class="line">        &#125;).error(function(error)&#123;/*请求失败时,回调*/</div><div class="line">            console.log(error);</div><div class="line">        &#125;)</div><div class="line"></div><div class="line">    &#125;])</div><div class="line"></div><div class="line">    /*3.绑定模板*/</div><div class="line">    /*4.绑定控制器*/</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;body ng-app=&apos;app&apos; ng-controller=&apos;zmController&apos;&gt;</div><div class="line">&lt;p&gt;&#123;&#123;res&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-fdb53fd6450b83dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="http服务-get请求的一个小demo"><a href="#http服务-get请求的一个小demo" class="headerlink" title="$http服务-get请求的一个小demo"></a>$http服务-get请求的一个小demo</h3><p><strong>系统给出的是一个json文件,要使用此文件首先需要转化成php文件格式</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-bff379083857dc11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-8ab255bc22205a53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;script src=angular.js&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    /*1.创建模块*/</div><div class="line">    var app = angular.module(&apos;app&apos;,[]);</div><div class="line">    /*2.创建控制器*/</div><div class="line">    app.controller(&quot;zmController&quot;,[&quot;$scope&quot;,&apos;$http&apos;,function($scope,$http)&#123;</div><div class="line">        $http(&#123;</div><div class="line">            url:&apos;students.php&apos;,</div><div class="line">            method:&apos;get&apos;,</div><div class="line">            params:&#123;</div><div class="line">                flag:&apos;zm&apos;</div><div class="line">            &#125;</div><div class="line">        &#125;).success(function(res)&#123;</div><div class="line">            $scope.students=res;</div><div class="line">            //接受服务器的值</div><div class="line">        &#125;).error(function(error)&#123;</div><div class="line">            console.log(error);</div><div class="line">        &#125;)</div><div class="line">    &#125;])</div><div class="line"></div><div class="line">    /*3.绑定模板*/</div><div class="line">    /*4.绑定控制器*/</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;body ng-app=&apos;app&apos; ng-controller=&apos;zmController&apos;&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li ng-repeat=&apos;student in students&apos;&gt;  //遍历服务器的值</div><div class="line">    &#123;&#123;student.name&#125;&#125;:&#123;&#123;student.address&#125;&#125;:&#123;&#123;student.age&#125;&#125;</div><div class="line">    &lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-c5fe2b7b3fc23adb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/16/7.跨域/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          跨域
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/23/5.服务/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">服务 </div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2016 张敏
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">carrotming</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>

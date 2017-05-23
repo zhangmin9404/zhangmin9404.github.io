@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>作用域-变量和函数提升 | zm_miner</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="额 晕了">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="作用域-变量和函数提升">
+<meta property="og:url" content="http://www.ring1314.com/2016/06/16/作用域-变量和函数提升/index.html">
+<meta property="og:site_name" content="zm_miner">
+<meta property="og:description" content="额 晕了">
+<meta property="og:updated_time" content="2017-05-23T04:41:03.164Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="作用域-变量和函数提升">
+<meta name="twitter:description" content="额 晕了">
+  
+    <link rel="alternative" href="/atom.xml" title="zm_miner" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/log.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85415703-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/log.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">张敏</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">努力挤进IT行</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about/">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/AngularJS/" style="font-size: 13.33px;">AngularJS</a> <a href="/tags/AngularJs/" style="font-size: 20px;">AngularJs</a> <a href="/tags/Javascript/" style="font-size: 16.67px;">Javascript</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">张敏</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/log.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">张敏</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">努力挤进IT行</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about/">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-作用域-变量和函数提升" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/16/作用域-变量和函数提升/" class="article-date">
+  	<time datetime="2016-06-16T06:45:00.000Z" itemprop="datePublished">2016-06-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      作用域-变量和函数提升
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作用域-变量和函数提升<br><a id="more"></a></p>
+<p>变量和函数的提升可以分成两步：</p>
+<ul>
+<li>1 js先预解析：把变量和函数声明提升到作用域顶端，我理解的意思是在浏览器中找一些东西<ul>
+<li>var  ；   函数function a(){};   参数；<br>所有变量，在正式运行代码之前都提前赋了一个值：未定义；<br>只要有以上中的任意一个,就预解析;<ul>
+<li>在预解析时遇到重名的只留下后一个;</li>
+<li>变量和函数重名的,就留下函数.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2.逐行解读代码<ul>
+<li>表达式：= + -  * / % ++ – 参数……</li>
+<li>表达式可以修改预解析的值<br>直接上代码应该更好理解一点，先来个简单的代码，理解下</li>
+</ul>
+</li>
+</ul>
+<p>示例1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alert(a);</div><div class="line"> var a=1;</div></pre></td></tr></table></figure></p>
+<p>结果:undefined</p>
+<ul>
+<li>首先预解析 ：<br>通过var function 参数 ，在代码中有var 那么就把var a 提升到作用域顶端。</li>
+<li>接着读代码：<br>第一行：alert（a）；往预解析中找a，恩，找到了a  因为所有变量，在正式运行代码之前都提前赋了一个值：未定义；<br>a=undefined;</li>
+</ul>
+<p>示例2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alert(a);</div><div class="line">var a=1;</div><div class="line">function a()&#123;alert(2);&#125;</div></pre></td></tr></table></figure></p>
+<p>结果:  function a(){alert(2);}<br>还是两步:</p>
+<ul>
+<li>预解析:  var  ；   函数function a(){};   参数；<br>var a=undefined;<br>function a(){alert(2);}<br>变量和函数重名了,干掉变量留下了函数</li>
+<li>读代码<br>第一行:现在预解析中只有函数了,所以a的值就为function a(){alert(2);}  </li>
+</ul>
+<p>示例3:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">alert(a); // function a()&#123;alert(4);&#125;</div><div class="line">var a=1;</div><div class="line">alert(a);//1</div><div class="line">function a()&#123;alert(2);&#125;</div><div class="line"> alert(a);//1</div><div class="line">function a()&#123;alert(2);&#125;</div><div class="line"> var a=3;</div><div class="line">alert(a);//3</div><div class="line"> function a()&#123;alert(4);&#125;</div><div class="line">alert(a);//3</div><div class="line"> a();//报错</div></pre></td></tr></table></figure></p>
+<ul>
+<li>预解析   var  ；   函数function a(){};   参数；<br>var a=undefined;<br>function a(){alert(2);}  //干掉前面变量 保留它<br>function a(){alert(2);}   //干掉前面函数 保留它<br>var a  //变量打不过函数 依旧保留前面函数<br>function a(){alert(4);}   //干掉前面函数 保留它  //最终保留的是此函数<br>读代码时预解析中值得变化<br>function a(){alert(4);}–&gt;a=1—&gt;a=3</li>
+<li>读代码<br>alert(a) // 往预解析中找 只有function a(){alert(4);}<br>var a=1; 表达式可以修改预解析的值 ,干掉函数–&gt; a=1;<br>alert(a)//1预解析中找到a ,a=1;<br>function a(){alert(2);} 函数只是一个声明不会改变预解析的值<br>alert(a);//1预解析中找到a 还是 a=1;<br>var a=3;   //改变预解析中a的值<br>alert(a);//3<br>function a(){alert(4);}//函数只是一个声明不会改变预解析的值<br>alert(a);//3<br>a()—&gt;3()肯定报错 a为3不是函数 肯定不能调用;</li>
+</ul>
+<p>示例 4<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var a=1;</div><div class="line">   function fn1()&#123;</div><div class="line">       alert(a); //1</div><div class="line">       a=2;</div><div class="line">   &#125;</div><div class="line">   fn1();</div><div class="line">   alert(a);  //2</div></pre></td></tr></table></figure></p>
+<ul>
+<li>预解析   var  ；   函数function a(){};   参数；<br>var a=undefined;<br> 读代码时预解析中值得变化<br>a=undefined–&gt;a=1–&gt;a=2</li>
+<li>读代码<br>var a=1; 表达式可以修改预解析的值 ,干掉函数–&gt; a=1;<br>fn(); 函数调用 又要预解析和读代码<ul>
+<li>预解析:<br>什么都没有 找不到 var  ；   函数function a(){};   参数；中的任意一个</li>
+<li>读代码:<br>alert(a) 找不到a往上找 找到a=1;那么a=1;<br>a=2; 表达式可以修改预解析的值 ,干掉a=1–&gt; a=2;<br>alert(a)此时预解析中a的值已经被修改为2了</li>
+</ul>
+</li>
+</ul>
+<p>示例5<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var a=1;</div><div class="line">   function fn1(a)&#123;</div><div class="line">       alert(a);</div><div class="line">       a=2; //1</div><div class="line">   &#125;</div><div class="line">   fn1(a);</div><div class="line">   alert(a); //1</div></pre></td></tr></table></figure></p>
+<p>和上面代码相比只是添加了行参和实参</p>
+<ul>
+<li>预解析   var  ；   函数function a(){};   参数；<br>var a=undefined;<br> 读代码时预解析中值得变化<br>a=undefined–&gt;a=1</li>
+<li><p>读代码<br>var a=1; 表达式可以修改预解析的值 a=undefined–&gt; a=1;<br>fn1(a); 函数调用 又要预解析和读代码</p>
+<ul>
+<li><p>预解析:<br>此时传递了一个实参a, a的值接受了全局变量a的值所以a=1.在function fn1(a){}中的形参实际上是function fn1(var a=1){} 所以在此次预解析时  a=undefined;</p>
+<p>读代码时预解析中值得变化<br>a=undefined–&gt;a=1–&gt;a=2</p>
+</li>
+<li>读代码:<br>从参数开始读 本质是局部变量 a=1<br>alert(a)   找到a=1;那么a=1;<br>a=2;     表达式可以修改此次预解析的值 ,干掉a=1–&gt; a=2;<br>alert(a);在全局中a的值还是1 ,不会被改为2</li>
+</ul>
+</li>
+</ul>
+<p>示例6:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var a=1;</div><div class="line">function fn1(a)&#123;</div><div class="line">    alert(a);//undefined</div><div class="line">    a=2;</div><div class="line">&#125;</div><div class="line">fn1();</div><div class="line">alert(a); //1</div></pre></td></tr></table></figure></p>
+<p>此时没有传实参</p>
+<ul>
+<li>预解析   var  ；   函数function a(){};   参数；<br>var a=undefined;<br> 读代码时预解析中值得变化<br>a=undefined–&gt;a=1</li>
+<li><p>读代码<br>var a=1; 表达式可以修改预解析的值 a=undefined–&gt; a=1;<br>fn1(); 函数调用 又要预解析和读代码</p>
+<ul>
+<li><p>预解析:<br>在function fn1(a){}中的形参实际上是function fn1(var a){} ,因为没有传实参,所以在此次预解析时  a=undefined;</p>
+<p>读代码时预解析中值得变化<br>a=undefined–&gt;a=2</p>
+</li>
+<li>读代码:<br>从参数开始读 本质是局部变量a=undefined;<br>alert(a)   找到a;那么a=a=undefined;;<br>a=2;     表达式可以修改此次预解析的值 , a=2.<br>alert(a);在全局中a的值还是1 ,不会被改为2</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/12/20/LESS.js/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          LESS 
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/29/on事件与addevent事件的区别/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">on事件与addevent事件的区别</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2016 张敏
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">carrotming</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
