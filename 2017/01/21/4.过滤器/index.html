@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>过滤器  | zm_miner</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="过滤器">
+<meta name="keywords" content="AngularJs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="过滤器 ">
+<meta property="og:url" content="http://www.ring1314.com/2017/01/21/4.过滤器/index.html">
+<meta property="og:site_name" content="zm_miner">
+<meta property="og:description" content="过滤器">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-785d6086fee5b8ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-05-23T04:01:40.310Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="过滤器 ">
+<meta name="twitter:description" content="过滤器">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4017085-785d6086fee5b8ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  
+    <link rel="alternative" href="/atom.xml" title="zm_miner" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/log.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85415703-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/log.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">张敏</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">努力挤进IT行</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about/">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/AngularJs/" style="font-size: 20px;">AngularJs</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">张敏</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/log.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">张敏</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">努力挤进IT行</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about/">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-4.过滤器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/21/4.过滤器/" class="article-date">
+  	<time datetime="2017-01-21T06:20:00.000Z" itemprop="datePublished">2017-01-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      过滤器 
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJs/">AngularJs</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/AngularJs/">AngularJs</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>过滤器<br><a id="more"></a></p>
+<h4 id="过滤器-对数据进行格式化-把格式化的结果返回。"><a href="#过滤器-对数据进行格式化-把格式化的结果返回。" class="headerlink" title="过滤器:对数据进行格式化,把格式化的结果返回。"></a>过滤器:对数据进行格式化,把格式化的结果返回。</h4><h5 id="管道符-：把上次的结果，做为下一次的参数传递"><a href="#管道符-：把上次的结果，做为下一次的参数传递" class="headerlink" title="管道符:：把上次的结果，做为下一次的参数传递"></a>管道符:：把上次的结果，做为下一次的参数传递</h5><p> 过滤器的本质就是一个方法<br> 会自动把|前面的内容,当做方法的第一个参数传入.<br> 如果想要自己手动传参 使用”:” 来进行传递</p>
+<h1 id="angular-内置了9个过滤器"><a href="#angular-内置了9个过滤器" class="headerlink" title="angular 内置了9个过滤器"></a>angular 内置了9个过滤器</h1><pre><code>currency:将数值格式转化为货币格式
+date:日期格式化,
+uppercase:将文本转化成大写格式
+lowercase:将文本转化成小写格式
+number:数字格式化,可控制小数位数
+limitTo:取出字符串或数组的前(正数)几位,或后(负数)    jiwei1
+filter:在给定数组中选择满足条件的一个子集,并返回 一个新数组,其条件可以是一个字符串,对象,函数
+
+orderBy:对数组进行排序,第2个参数可控制方向
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body ng-app=&apos;app&apos; ng-controller=&quot;zmController&quot;&gt;</div><div class="line">&lt;!--/*</div><div class="line">* 1.内置指令</div><div class="line">* 2.自定义指令</div><div class="line">* 3.过滤器-》对数据进行格式化处理。   ￥12   new Date -&gt;  yyyy-MM-dd</div><div class="line">* 4.服务</div><div class="line">* 5.路由</div><div class="line"></div><div class="line">*</div><div class="line">* */--&gt;</div><div class="line">&lt;!--如果想要自己手动进行传参 通过&quot;:&quot;进行传参</div><div class="line">    过滤器的本质：就是一个方法/函数/function</div><div class="line">    function currency(input,arg)&#123;</div><div class="line">        return arg + input;</div><div class="line">    &#125;</div><div class="line">--&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;p&gt;&#123;&#123;price | currency:&apos;@&apos;&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;&#123;&#123;curDat | date:&quot;yyyy-MM-dd hh:mm:ss&quot;&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;&#123;&#123;str | uppercase | lowercase&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;&#123;&#123;num | number:2&#125;&#125;&lt;/p&gt;&lt;!--参数&quot;保留几位小数--&gt;</div><div class="line">&lt;p&gt;&#123;&#123;arr | limitTo :-1&#125;&#125;&lt;/p&gt;&lt;!--负数:代表从后面开始截取--&gt;</div><div class="line"></div><div class="line">&lt;input type=&quot;text&quot; ng-model=&quot;search&quot;&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li ng-repeat=&apos;value in arr | filter:search  &apos;&gt; &#123;&#123;value&#125;&#125;&lt;/li&gt;</div><div class="line">    &lt;!--从在input中输入的来筛选arr中的值--&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line"></div><div class="line">&lt;p&gt;&#123;&#123;arrNum | orderBy :&apos;&apos;:true&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;!--true降序--&gt;</div><div class="line">&lt;p&gt;&#123;&#123;arrNum | orderBy :&apos;&apos;:false&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;!--false升序--&gt;</div><div class="line"></div><div class="line">&lt;p&gt;&#123;&#123;json&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;&#123;&#123;json | json &#125;&#125;&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;script src=angular.js&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line"></div><div class="line">    /*1.创建模板*/</div><div class="line">    var app=angular.module(&apos;app&apos;,[]);</div><div class="line">    /*2.创建控制器*/</div><div class="line">    app.controller(&quot;zmController&quot;,[&quot;$scope&quot;,function($scope)&#123;</div><div class="line">        $scope.price = 12.0;</div><div class="line">        $scope.curDat = new Date;</div><div class="line">        $scope.str = &quot;abc&quot;;</div><div class="line">        $scope.num = &quot;123&quot;;/*num中不能出现非数字*/</div><div class="line">        $scope.arr = [&apos;html&apos;,&apos;css&apos;,&apos;js&apos;];</div><div class="line">        $scope.arrNum=[10,2,11,45];</div><div class="line">        $scope.json=[</div><div class="line">            &#123;name:&apos;zm&apos;,age:23&#125;,</div><div class="line">            &#123;name:&apos;zxy&apos;,age:23&#125;,</div><div class="line">            &#123;name:&apos;fyh&apos;,age:24&#125;,</div><div class="line">        ]</div><div class="line"></div><div class="line">    &#125;])</div><div class="line">    /*3.绑定模板*/</div><div class="line">    /*4.绑定控制器*/</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-785d6086fee5b8ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h1 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body ng-app=&apos;app&apos; ng-controller=&quot;zmController&quot;&gt;</div><div class="line"></div><div class="line">&lt;!--1.--&gt;&lt;p&gt;&#123;&#123; price | zmCur:&apos;$&apos;&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;!--2--&gt; &lt;p&gt;&#123;&#123;str | firstUppcase&#125;&#125;&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;script src=angular.js&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    /*1.创建模板*/</div><div class="line">    var app=angular.module(&apos;app&apos;,[]);</div><div class="line">    /*2.创建控制器*/</div><div class="line"></div><div class="line"></div><div class="line">    /*自定义控制器*/</div><div class="line">    app.controller(&quot;zmController&quot;,[&quot;$scope&quot;,function($scope)&#123;</div><div class="line">        $scope.price=&quot;20&quot;;</div><div class="line">        $scope.str=&quot;zm&quot;;</div><div class="line">    &#125;])</div><div class="line"></div><div class="line"></div><div class="line">    /*自定义过滤器*/</div><div class="line"></div><div class="line">    /*</div><div class="line">    * 第一个参数:过滤器的名称</div><div class="line">    * 第二个参数:回调函数</div><div class="line">    *返回值为一个函数(input为自动传入的数据,它为管道符前面的内容</div><div class="line">    * */</div><div class="line">    app.filter(&quot;zmCur&quot;,function()&#123;</div><div class="line">        return function(input,args)&#123;//自动传入的,管道符前面的内容</div><div class="line">            return args+input;</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">    /*.首字母大小的过滤器*/</div><div class="line">    app.filter(&quot;firstUppcase&quot;,function()&#123;</div><div class="line">        return function(input)&#123;</div><div class="line">            return input[0].toUpperCase()+input.slice(1);</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">    /*3.绑定模板*/</div><div class="line">    /*4.绑定控制器*/</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/23/5.服务/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          服务 
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/21/3.数据指令 -数据单向,数据双向绑定/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据指令 </div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2016 张敏
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">carrotming</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>

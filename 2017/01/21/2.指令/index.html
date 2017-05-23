@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>指令  | zm_miner</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="AngularJs内置,自定义指令,控制器作用域">
+<meta name="keywords" content="AngularJs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="指令 ">
+<meta property="og:url" content="http://www.ring1314.com/2017/01/21/2.指令/index.html">
+<meta property="og:site_name" content="zm_miner">
+<meta property="og:description" content="AngularJs内置,自定义指令,控制器作用域">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-8a30dba44bbc700d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-1960f10756299416.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-3ee877a7423251f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-9ff7e4c95281d2ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-114bc99349943e08.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-c531a33996bc5c27.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-676cb3f93bc355be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-3e0deb3cc06b90e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4017085-8f9667c17a455805.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-05-23T03:59:17.794Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="指令 ">
+<meta name="twitter:description" content="AngularJs内置,自定义指令,控制器作用域">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4017085-8a30dba44bbc700d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  
+    <link rel="alternative" href="/atom.xml" title="zm_miner" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/log.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85415703-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/log.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">张敏</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">努力挤进IT行</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about/">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/AngularJs/" style="font-size: 20px;">AngularJs</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">张敏</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/log.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">张敏</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">努力挤进IT行</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about/">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-2.指令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/21/2.指令/" class="article-date">
+  	<time datetime="2017-01-21T00:02:00.000Z" itemprop="datePublished">2017-01-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      指令 
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJs/">AngularJs</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/AngularJs/">AngularJs</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>指令<br><a id="more"></a></p>
+<h1 id="1-内置指令"><a href="#1-内置指令" class="headerlink" title="1.内置指令"></a>1.内置指令</h1><h3 id="什么是指令"><a href="#什么是指令" class="headerlink" title="什么是指令?"></a>什么是指令?</h3><p>HTML在构建应用（App）时存在诸多不足之处，AngularJS通过扩展一系列的HTML属性或标签来弥补这些缺陷，所谓指令就是AngularJS自定义的HTML属性或标签，这些指令都是以ng-做为前缀的，例如ng-app、ng-controller、ng-repeat等。</p>
+<h3 id="内置指令"><a href="#内置指令" class="headerlink" title="内置指令"></a>内置指令</h3><pre><code>ng-app 指定应用根元素，至少有一个元    素指定了此属性。
+ng-controller 指定控制器
+ng-show控制元素是否显示，true显示、    false不显示
+ng-hide控制元素是否隐藏，true隐藏、    false不隐藏
+ng-if控制元素是否“存在”，true存在、    false不存在
+ng-src增强图片路径
+ng-href增强地址
+ng-class控制类名
+ng-include引入模板
+ng-disabled表单禁用
+ng-readonly表单只读
+ng-checked单/复选框表单选中
+ng-selected下拉框表单选中
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">    &lt;script src=angular.js&gt;&lt;/script&gt;</div><div class="line">    &lt;script&gt;</div><div class="line"></div><div class="line">        /*1.创建模板*/</div><div class="line">        var app = angular.module(&apos;app&apos;,[]);</div><div class="line"></div><div class="line">        /*2.创建控制器 */</div><div class="line">        app.controller(&apos;zmController&apos;,[&apos;$scope&apos;,function($scope)&#123;</div><div class="line">            $scope.name1=&apos;我是p标签1&apos;</div><div class="line">            $scope.name2=&apos;我是p标签2&apos;</div><div class="line">        &#125;])</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;!--3.绑定模板 --&gt;</div><div class="line">&lt;!--4.绑定控制器--&gt;</div><div class="line">&lt;body ng-app=&quot;app&quot; ng-controller=&apos;zmController&apos;&gt;</div><div class="line"></div><div class="line">&lt;!--本质上就是css样式中的display--&gt;</div><div class="line">&lt;!--还是存在的只是隐藏了--&gt;</div><div class="line"></div><div class="line">&lt;p ng-show = &quot;true&quot;&gt;&#123;&#123;name1&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p ng-hide = &quot;false&quot;&gt;&#123;&#123;name2&#125;&#125;&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;!--控制该标签是否存在--&gt;</div><div class="line">&lt;!--不存在了--&gt;</div><div class="line">&lt;p ng-if=&apos;false&apos;&gt;&#123;&#123;name2&#125;&#125;&lt;/p&gt;&lt;!--出现以后我下次再也不想要他了 考虑到性能问题 比如广告 蒙版 --&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h1 id="2-事件处理"><a href="#2-事件处理" class="headerlink" title="2.事件处理"></a>2.事件处理</h1><pre><code>使用方法为:ng-事件名称 = “事件响应方法名称( 参数)&quot;
+    参数可以自己指定, 
+    也可以传入事件对象$event
+    使用$scope来去实现事件定义的方法
+       $scope.事件名称 = function(参数){
+
+        }
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        .red&#123;</div><div class="line">            color: red;</div><div class="line">        &#125;</div><div class="line">        .fz50&#123;</div><div class="line">            font-size: 50px;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;script src = &quot;angular.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script&gt;</div><div class="line"></div><div class="line">        /*1.创建模板*/</div><div class="line"></div><div class="line">        var app = angular.module(&apos;app&apos;,[]);</div><div class="line"></div><div class="line">        /*2.创建控制器*/</div><div class="line">        app.controller(&apos;zmController&apos;,[&quot;$scope&quot;,function($scope)&#123;</div><div class="line">            /*1*/</div><div class="line">            $scope.name1 = &quot;我是p标签1&quot;;</div><div class="line">            $scope.name2 = &quot;我是P标签2&quot;;</div><div class="line"></div><div class="line">            /*2*/</div><div class="line">            $scope.url=&quot;002.jpg&quot;</div><div class="line"></div><div class="line">            /*4.*/</div><div class="line">            $scope.isClass=false;</div><div class="line"></div><div class="line">            /*5.*/</div><div class="line">            //在模型当中实现事件方法</div><div class="line">            $scope.change1=function()&#123;</div><div class="line">                $scope.isClass=true;</div><div class="line">            &#125;;</div><div class="line">            $scope.change2=function()&#123;</div><div class="line">                $scope.isClass=false;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">            </div><div class="line">            </div><div class="line">            $scope.sty=&#123;</div><div class="line">                &apos;font-size&apos;:&apos;100px&apos;</div><div class="line">            &#125;</div><div class="line">        &#125;]);</div><div class="line"></div><div class="line">        /*3.绑定模板*/</div><div class="line">        /*4.绑定控制器*/</div><div class="line"></div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body ng-app=&apos;app&apos; ng-controller=&quot;zmController&quot;&gt;</div><div class="line">&lt;!--1--&gt;</div><div class="line">&lt;!--本质上就是css样式中的display--&gt;</div><div class="line">&lt;!--还是存在的只是隐藏了--&gt;</div><div class="line">&lt;p ng-show = &quot;true&quot;&gt;&#123;&#123;name1&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p ng-hide = &quot;false&quot;&gt;&#123;&#123;name2&#125;&#125;&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;!--控制该标签是否存在--&gt;</div><div class="line">&lt;!--不存在了--&gt;</div><div class="line">&lt;p ng-if=&apos;false&apos;&gt;&#123;&#123;name2&#125;&#125;&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;!--2.--&gt;</div><div class="line">&lt;!--&lt;img src=&quot;002.jpg&quot; alt=&quot;&quot;&gt;--&gt;&lt;!--实用原生的src链接一个图片--&gt;</div><div class="line">&lt;!--&lt;img src=&quot;&#123;&#123;url&#125;&#125;&quot; alt=&quot;&quot;&gt;--&gt;&lt;!--也显示但是会报错 script在下面的时候 页面从上往下执行走到src找地址 找url没有url地址 第一次找地址没有找到 找不到&#123;&#123;url&#125;&#125; 会报错 404 --&gt;</div><div class="line">&lt;img ng-src=&quot;&#123;&#123;url&#125;&#125;&quot; alt=&quot;&quot;&gt;&lt;!--原生的HTML认不得ng-src 所以就不发请求就不会有错误 走到下面加载angular的时候再去加载</div><div class="line"></div><div class="line">Angular 机制：</div><div class="line">把所有DOM元素渲染完成之后，再去回头解析属于angular的东西</div><div class="line"></div><div class="line"></div><div class="line">--&gt;</div><div class="line">&lt;!--3--&gt;</div><div class="line">&lt;!--</div><div class="line">ng-class=&quot;&#123;key:value&#125;&quot; 可以写多个</div><div class="line">value是bool类型</div><div class="line">--&gt;</div><div class="line">&lt;p ng-class=&apos;&#123;red:true,fz50:true&#125;&apos;&gt;我是p标签&lt;/p&gt;</div><div class="line">&lt;!--4--&gt;</div><div class="line">&lt;p ng-class=&apos;&#123;red:isClass,fz50:isClass&#125;&apos;&gt;我是p标签&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;!--5--&gt;</div><div class="line">&lt;!--事件处理</div><div class="line">    1.定义事件</div><div class="line">    2.在模型当中实现事件方法</div><div class="line">--&gt;</div><div class="line">&lt;button ng-click=&apos;change1()&apos;&gt;添加类&lt;/button&gt;</div><div class="line">&lt;button ng-click=&apos;change2()&apos;&gt;移除类&lt;/button&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><strong>ng-include</strong></p>
+<p>在html当中是没有办法直接引入其它文件。<br>浏览器不允许html对文件进行操作。<br>原因：出于安全考虑。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">    &lt;script src=&quot;angular.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        /*1.创建模板*/</div><div class="line">        var app = angular.module(&apos;app&apos;,[]);</div><div class="line">        /*2.创建控制器*/</div><div class="line">        app.controller(&apos;zmController&apos;,[&quot;$scope&quot;,function($scope)&#123;</div><div class="line"></div><div class="line"></div><div class="line">        &#125;])</div><div class="line">        /*3.绑定模板*//**/</div><div class="line">        /*4.绑定控制器*/</div><div class="line"></div><div class="line"></div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body ng-app=&quot;app&quot;&gt;</div><div class="line">&lt;!--</div><div class="line">  原理:</div><div class="line">  其实就是发送一个ajax请求</div><div class="line">  把请求的结果,插入到dom当中</div><div class="line">--&gt;</div><div class="line"></div><div class="line">&lt;div ng-include=&quot;&apos;header.html&apos;&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;div&gt;主题&lt;/div&gt;</div><div class="line">&lt;div ng-include=&quot;&apos;footer.html&apos;&quot;&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>ng-switch</strong><br>用于数据筛选<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;script src=angular.js&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    /*1.创建模块*/</div><div class="line">    var app = angular.module(&apos;app&apos;,[]);</div><div class="line">    /*2.创建控制器*/</div><div class="line">    app.controller(&quot;zmController&quot;,[&quot;$scope&quot;,function($scope)&#123;</div><div class="line"></div><div class="line">        $scope.course = [&apos;html&apos;,&apos;js&apos; ,&apos;css&apos;]</div><div class="line"></div><div class="line">    &#125;])</div><div class="line"></div><div class="line">    /*3.绑定模板*/</div><div class="line">    /*4.绑定控制器*/</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;body ng-app=&apos;app&apos; ng-controller=&apos;zmController&apos;&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li ng-repeat=&quot;value in course&quot; ng-switch=&apos;value&apos;&gt;&#123;&#123;value&#125;&#125;</div><div class="line">        &lt;!--满足条件的展示出来 不满足的隐藏--&gt;</div><div class="line">    &lt;p ng-switch-when=&apos;css&apos;&gt;&#123;&#123;value&#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<h1 id="3-自定义指令"><a href="#3-自定义指令" class="headerlink" title="3.自定义指令"></a>3.自定义指令</h1><h4 id="AngularJS允许根据实际的业务需要自定义指令-通过angular全局对象下的directive方法实现"><a href="#AngularJS允许根据实际的业务需要自定义指令-通过angular全局对象下的directive方法实现" class="headerlink" title="AngularJS允许根据实际的业务需要自定义指令.通过angular全局对象下的directive方法实现"></a>AngularJS允许根据实际的业务需要自定义指令.通过angular全局对象下的directive方法实现</h4><p>自己给原生的html标签添加一些新属性,属性的名称自己决定<br>添加属性之后,要做什么功能,自己去决定</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-8a30dba44bbc700d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body ng-app=&apos;app&apos;    ng-controller=&quot;zmController&quot;&gt;</div><div class="line"></div><div class="line">&lt;p&gt;&#123;&#123;name&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;!--自定义指令--&gt;</div><div class="line">&lt;zm&gt;&lt;/zm&gt;</div><div class="line">&lt;p zm&gt;&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;script src=angular.js&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    /*1.创建模板*/</div><div class="line">    varapp=angular.module(&apos;app&apos;,[])   ;</div><div class="line">    /*2.创建控制器*/</div><div class="line">    app.controller(&quot;zmControlle&quot;,[&quot;$scope&quot;,function($scope)&#123;</div><div class="line">$scope.name=&quot;zm&quot;</div><div class="line">    &#125;])</div><div class="line">    /*3.绑定模板*/</div><div class="line">    /*4.绑定控制器*/</div><div class="line">    </div><div class="line"> &lt;!--自定义指令--&gt;</div><div class="line"></div><div class="line">    app.directive(&quot;zm&quot;, function()     &#123;</div><div class="line">        /*返回一个对象*/</div><div class="line">        return&#123;</div><div class="line">            /*</div><div class="line">             E:以元素形式出现</div><div class="line">             A:以属性形式出现</div><div class="line">             C:以类的形式出现</div><div class="line">             * */</div><div class="line">            restrict:&apos;EA&apos;,</div><div class="line">            template:&quot;&lt;div&gt;&lt;1&gt;我是一   个指令模板&lt;p&gt;我是标签&lt;    /p&gt;&lt;/h1&gt;   &lt;p&gt;1111&lt;/p&gt;&lt;/div&gt;,// //指令模板必须得要有一个根元素包裹起来。</div><div class="line">            replace:false //是否替换原标签</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">  </div><div class="line">``` </div><div class="line">#### 自定义指令</div><div class="line">第一个参数 指令名称</div><div class="line"></div><div class="line">第二个参数 回调函数</div><div class="line"></div><div class="line">    E:以元素形式出现</div><div class="line">    A:以属性形式出现</div><div class="line">    C:以类的形式出现</div><div class="line"></div><div class="line"></div><div class="line">![image.png](http://upload-images.jianshu.io/upload_images/4017085-52f13f9d895936d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line"></div><div class="line">**templateUrl:&quot;./template.html&quot;//可以传路径**</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">![image.png](http://upload-images.jianshu.io/upload_images/4017085-250e5467e94a2a96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line"></div><div class="line"></div><div class="line"> **transclude:true //是否保留标签当中的内容**</div><div class="line"> </div><div class="line"> 是否替换原有标签一定要是false,否则不出现任何东西</div><div class="line"></div><div class="line">![image.png](http://upload-images.jianshu.io/upload_images/4017085-87afe359f49ac17f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line"></div><div class="line">![image.png](http://upload-images.jianshu.io/upload_images/4017085-f5e2cba12a3717bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line"></div><div class="line"></div><div class="line">![image.png](http://upload-images.jianshu.io/upload_images/4017085-b9949c0726f94b21.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line"></div><div class="line">![image.png](http://upload-images.jianshu.io/upload_images/4017085-80288a9de341de0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line"></div><div class="line"></div><div class="line">#### 指令的作用域</div></pre></td></tr></table></figure>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html lang="en"></html></p>
+<p><head><br>    <meta charset="UTF-8"><br>    <title>Title</title><br></head></p>
+<body ng-app="app" ng-controller="zmController"><br><!--<zmDir></zmDir>   结果出不来--><br><zm-dir></zm-dir><!--我是p--><br><p zm-dir=""></p><!--我是p--><br><!--1.在使用指令时,一定要注意大小写,
+
+如果定义指令名称为大写,在使用时转成"-"--><br></body><br><script src="angular.js"></script><br><script><br>    /<em>1.创建模板</em>/<br>    var app=angular.module(‘app’,[]);<br>    /<em>2.创建控制器</em>/<br>    app.controller(“zmController”,[“$scope”,function($scope){<br>    }])<br>    /<em>3.绑定模板</em>/<br>    /<em>4.绑定控制器</em>/<br><br>    app.directive(“zmDir”, function () {<br>        /<em>返回一个对象</em>/<br>        return{<br>            restrict:’EA’,<br>            template:”<p>我是p</p>“,<br>            replace:false,//是否替换原有标签<br>            transclude:true//是否保留标签当中的内容<br>        }<br><br>    });<br></script><br><br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">这个效果是当我在输入框中输入内容时,底下的p标签里的内容就是什么</div><div class="line"></div><div class="line">input里有什么</div><div class="line"></div><div class="line">p就有什么</div><div class="line"></div><div class="line">![image.png](http://upload-images.jianshu.io/upload_images/4017085-2b11ea409c3d31cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">![image.png](http://upload-images.jianshu.io/upload_images/4017085-2ae94f2b62b821fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line"></div><div class="line"></div><div class="line">![image.png](http://upload-images.jianshu.io/upload_images/4017085-c9a4cd10fec667a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line"></div><div class="line">p里有什么</div><div class="line"></div><div class="line">input里就有什么</div><div class="line"></div><div class="line"> /*默认情况下， 指令使用的模型是与它所在控制器使用的是同一个*/</div><div class="line"></div><div class="line">![image.png](http://upload-images.jianshu.io/upload_images/4017085-098de72f21fe02a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line"></div><div class="line"> controller:function ($scope) &#123;//自定义的指令，可以有自己的作用域。有自己的模型</div><div class="line"></div><div class="line">![image.png](http://upload-images.jianshu.io/upload_images/4017085-f217f447dc037a49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line"></div><div class="line"># 4.控制器作用域</div><div class="line"></div><div class="line">**1.每个属性所在的控制器都有对应的值的情况就是一一对应**</div></pre></td></tr></table></figure><br><br>&lt;!DOCTYPE html&gt;<br><html lang="en"><br><head><br>    <meta charset="UTF-8"><br>    <title>Title</title><br></head><br><body ng-app="app"><br><div ng-controller="parentController"><br>    <p></p><br><br>    <div ng-controller="zmController"><br>        <p></p><br>    </div><br><br>    <div ng-controller="zmController1"><br>        <p></p><br>    </div><br></div><br></body>
+
+<script src="angular.js"></script>
+<script>
+    /*1.创建模块*/
+    var app = angular.module('app',[]);
+    /*2.创建控制器*/
+
+    app.controller('parentController',['$scope',function ($scope) {
+        $scope.name="parent"
+    }]);
+
+    app.controller('zmController',['$scope',function ($scope) {
+     $scope.name="zm"
+    }]);
+
+    app.controller('zmController1',['$scope',function ($scope) {
+        $scope.name="zm1"
+    }]);
+    /*3.绑定模块 ng-app="app"*/
+    /*4.绑定控制器 */
+</script>
+
+<p></p></html><br>```<br><img src="http://upload-images.jianshu.io/upload_images/4017085-1960f10756299416.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><p></p>
+<p><strong>2.找属性时,如果自己所在的控制器,没有该属性,就会去它对应的父级</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-3ee877a7423251f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-9ff7e4c95281d2ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-114bc99349943e08.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><strong>3.如果父级也没有该属性,那就找不到值.<br>父级作用域不能访问子集的属性.找不到,所以不显示</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-c531a33996bc5c27.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><strong>找不到,所以不显示</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-676cb3f93bc355be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><strong>4.根作用域:全局作用域<br>$rootScope.name=zm;<br>ng-init:初始化全局作用域</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-3e0deb3cc06b90e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4017085-8f9667c17a455805.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><strong>当父级属性为空时找到body中的初始化值使用</strong></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/21/3.数据指令 -数据单向,数据双向绑定/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          数据指令 
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/20/1.angularJs初认识-mvc MVVM/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">AngularJs初认识 </div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2016 张敏
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">carrotming</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
